@@ -28,7 +28,8 @@ public class Student {
     }
     
     //overloaded constructor
-    public Student(String firstName, String middleName, String lastName, Date dateOfBirth, String placeOfBirth){
+    public Student(String firstName, String middleName, String lastName, 
+            Date dateOfBirth, String placeOfBirth){
         this.firstName = firstName;
         this.middleName = middleName;
         this.lastName = lastName;

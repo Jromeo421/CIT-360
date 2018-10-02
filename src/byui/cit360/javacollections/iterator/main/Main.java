@@ -35,7 +35,8 @@ public class Main {
             System.out.println();
             
             // Initialize student we need to find in the ArrayList
-            Student jackbower = new Student("Jack", null, "Bower", getDate(1,5,1970), "Paris, France");
+            Student jackbower = new Student("Jack", null, "Bower", 
+                    getDate(1,5,1970), "Paris, France");
             
             // Loop through Students collection to find our student
             findStudent(jackbower);
@@ -54,8 +55,10 @@ public class Main {
     public static void initializeAndLoadStudents() {
         
         // Add collection elements
-        students.add(new Student("Jack", null, "Bower", getDate(1,5,1970), "Los Angeles, CA, United States"));
-        students.add(new Student("Clark", "Kal-El", "Kent", getDate(2,29,1960), "Smallville, KS, United States"));
+        students.add(new Student("Jack", null, "Bower", getDate(1,5,1970), 
+                "Los Angeles, CA, United States"));
+        students.add(new Student("Clark", "Kal-El", "Kent", getDate(2,29,1960), 
+                "Smallville, KS, United States"));
         
         Student batman = new Student();
         batman.setFirstName("Bruce");
@@ -92,8 +95,10 @@ public class Main {
             Student currentStudent = students.get(i);
             if (studentToFind.equals(students.get(i))) {
                 System.out.println("Student match found...");
-                System.out.println("Student " + currentStudent.getFirstName() + currentStudent.getLastName() +
-                        " and " + studentToFind.getFirstName() + studentToFind.getLastName() + " are equal.");
+                System.out.println("Student " + currentStudent.getFirstName() + 
+                        currentStudent.getLastName() +
+                        " and " + studentToFind.getFirstName() + 
+                        studentToFind.getLastName() + " are equal.");
             }
         }
     }
