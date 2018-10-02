@@ -25,37 +25,22 @@ public class Main {
     public static void main(String[] args) {
 
         try {
-         
             // Initialize collection
             students = new ArrayList<>();
+            initializeAndLoadStudents();
+        
+            // Iterate through Students collection and print each student
+            printStudents();
             
-            // Add collection elements
-            students.add(new Student("Jack", null, "Bower", getDate(1,5,1970), "Los Angeles, CA, United States"));
-            students.add(new Student("Clark", "Kal-El", "Kent", getDate(2,29,1960), "Smallville, KS, United States"));
+            System.out.println();
             
-            Student batman = new Student();
-            batman.setFirstName("Bruce");
-            batman.setLastName("Wayne");
-            batman.setDateOfBirth(getDate(5,18,1939));
-            batman.setPlaceOfBirth("Gotham City, NY, United States");
+            // Initialize student we need to find in the ArrayList
+            Student jackbower = new Student("Jack", null, "Bower", getDate(1,5,1970), "Paris, France");
             
-            Student spiderman = new Student();
-            spiderman.setFirstName("Peter");
-            spiderman.setLastName("Parker");
-            spiderman.setDateOfBirth(getDate(3,1,1962));
-            spiderman.setPlaceOfBirth("Queens, NY, United States");
+            // Loop through Students collection to find our student
+            findStudent(jackbower);
             
-            students.add(batman);
-            students.add(spiderman);
-            
-            // Get collection iterator
-            Iterator iterator = students.iterator();
-
-            // Iterate through collection and print its elements
-            while(iterator.hasNext()) {
-               Student student = (Student)iterator.next();
-               System.out.println(student);
-            }
+            System.out.println();
             
         } catch (Exception e) {
             System.out.println("Exception: " + e.toString() +
@@ -63,6 +48,53 @@ public class Main {
                                     "\nMessage: " + e.getMessage());
                 
                 e.printStackTrace();
+        }
+    }
+
+    public static void initializeAndLoadStudents() {
+        
+        // Add collection elements
+        students.add(new Student("Jack", null, "Bower", getDate(1,5,1970), "Los Angeles, CA, United States"));
+        students.add(new Student("Clark", "Kal-El", "Kent", getDate(2,29,1960), "Smallville, KS, United States"));
+        
+        Student batman = new Student();
+        batman.setFirstName("Bruce");
+        batman.setLastName("Wayne");
+        batman.setDateOfBirth(getDate(5,18,1939));
+        batman.setPlaceOfBirth("Gotham City, NY, United States");
+        
+        Student spiderman = new Student();
+        spiderman.setFirstName("Peter");
+        spiderman.setLastName("Parker");
+        spiderman.setDateOfBirth(getDate(3,1,1962));
+        spiderman.setPlaceOfBirth("Queens, NY, United States");
+        
+        students.add(batman);
+        students.add(spiderman);
+    }
+    
+    // Iterate through collection and print its elements
+    public static void printStudents() {
+        
+        Iterator iterator = students.iterator();
+        
+        while(iterator.hasNext()) {
+            Student student = (Student)iterator.next();
+            System.out.println(student);
+        }
+    }
+    
+    // Loop through collection and find matching elements
+    public static void findStudent(Student studentToFind) {
+        
+        for (int i = 0; i < students.size(); i++) {
+            
+            Student currentStudent = students.get(i);
+            if (studentToFind.equals(students.get(i))) {
+                System.out.println("Student match found...");
+                System.out.println("Student " + currentStudent.getFirstName() + currentStudent.getLastName() +
+                        " and " + studentToFind.getFirstName() + studentToFind.getLastName() + " are equal.");
+            }
         }
     }
     
@@ -73,6 +105,11 @@ public class Main {
         cal.set(Calendar.DATE, 24);
         cal.set(Calendar.YEAR, 2013);
         
+        // Reset time, not needed for this exercise
+        cal.set(Calendar.HOUR, 0);
+        cal.set(Calendar.MINUTE, 0);
+        cal.set(Calendar.SECOND, 0);
+        cal.set(Calendar.MILLISECOND, 0);
         return cal.getTime();
     }
     

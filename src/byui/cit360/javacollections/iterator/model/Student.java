@@ -104,9 +104,9 @@ public class Student {
         if (!Objects.equals(this.lastName, other.lastName)) {
             return false;
         }
-        if (!Objects.equals(this.placeOfBirth, other.placeOfBirth)) {
-            return false;
-        }
+        //if (!Objects.equals(this.placeOfBirth, other.placeOfBirth)) {
+        //    return false;
+        //}
         if (!Objects.equals(this.dateOfBirth, other.dateOfBirth)) {
             return false;
         }
