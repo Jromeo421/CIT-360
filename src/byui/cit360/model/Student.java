@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package byui.cit360.javacollections.iterator.model;
+package byui.cit360.model;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -105,9 +105,9 @@ public class Student {
         if (!Objects.equals(this.lastName, other.lastName)) {
             return false;
         }
-        //if (!Objects.equals(this.placeOfBirth, other.placeOfBirth)) {
-        //    return false;
-        //}
+        if (!Objects.equals(this.placeOfBirth, other.placeOfBirth)) {
+            return false;
+        }
         if (!Objects.equals(this.dateOfBirth, other.dateOfBirth)) {
             return false;
         }

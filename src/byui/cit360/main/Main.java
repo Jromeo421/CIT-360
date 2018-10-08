@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package byui.cit360.javacollections.iterator.main;
+package byui.cit360.main;
 
-import byui.cit360.javacollections.iterator.model.Student;
+import byui.cit360.model.Student;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -93,7 +93,7 @@ public class Main {
         for (int i = 0; i < students.size(); i++) {
             
             Student currentStudent = students.get(i);
-            if (studentToFind.equals(students.get(i))) {
+            if (studentToFind.equals(currentStudent)) {
                 System.out.println("Student match found...");
                 System.out.println("Student " + currentStudent.getFirstName() + 
                         currentStudent.getLastName() +
