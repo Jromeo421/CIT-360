@@ -13,7 +13,7 @@ import java.util.Objects;
  *
  * @author hysi-jetmir
  */
-public class Student {
+public class StudentModel {
     
     //class instance variables
     private String firstName;
@@ -23,12 +23,12 @@ public class Student {
     private String placeOfBirth;
     
     //default constructor
-    public Student(){
+    public StudentModel(){
         
     }
     
     //overloaded constructor
-    public Student(String firstName, String middleName, String lastName, 
+    public StudentModel(String firstName, String middleName, String lastName, 
             Date dateOfBirth, String placeOfBirth){
         this.firstName = firstName;
         this.middleName = middleName;
@@ -95,7 +95,7 @@ public class Student {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Student other = (Student) obj;
+        final StudentModel other = (StudentModel) obj;
         if (!Objects.equals(this.firstName, other.firstName)) {
             return false;
         }
