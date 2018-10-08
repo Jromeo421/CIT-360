@@ -7,9 +7,7 @@ package byui.cit360.controller;
 
 import byui.cit360.model.StudentModel;
 import byui.cit360.view.StudentsView;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -31,11 +29,19 @@ public class StudentsController {
         DefaultTableModel tableModel = new DefaultTableModel(col, 0);
         
         // Populate model (array of students) to tableModel
-        tableModel.addRow(col);
+        Object rowData[] = new Object[5];
+        for (int i = 0; i < model.size(); i++) {
+            rowData[0] = model.get(i).getFirstName();
+            rowData[1] = model.get(i).getMiddleName();
+            rowData[2] = model.get(i).getLastName();
+            rowData[3] = model.get(i).getDateOfBirth();
+            rowData[4] = model.get(i).getPlaceOfBirth();
+            tableModel.addRow(rowData);
+        }
         
         // View the application's GUI
         StudentsView view = new StudentsView();
-        view.jTableStudents = new JTable (tableModel);
+        view.jTableStudents.setModel(tableModel);
         view.setVisible(true);
     }
 }

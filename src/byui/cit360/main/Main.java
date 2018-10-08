@@ -11,8 +11,6 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Iterator;
 import byui.cit360.model.StudentModel;
-import byui.cit360.view.StudentsView;
-import javax.swing.text.View;
 
 /**
  *
